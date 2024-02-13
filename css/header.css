@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.header{
+    background-color: #0769E9;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    max-width: 992px;
+    margin: auto;
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu-item{
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: 0.3rem;
+    padding: 1em;
+    transition: all 0.5s;
+}
+.nav-menu-item:hover{
+    background-color: #054D98;
+}
+
+
+ul > li{
+    display: inline-block;
+}
+
+
+a{
+    color: white;
+    text-decoration: none;
+}
+.nav-toggle{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 26px;
+    padding: 0 20px;
+
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+    .header{
+        padding: 10px 10px 10px 20px;
+        height: 60px;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #2c3e50;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+
+        height: calc(100% - 60px);
+        overflow-y: auto;
+
+        left: 100%;
+        transition: left 0.3s;
+    }
+    .nav-menu-item{
+        padding: 20px;
+    }
+    .logo{
+        display: block;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .nav-menu-item:hover{
+        background: none;
+    }
+    .nav-menu-link:hover{
+        color: #83c5f7;
+        background: none;
+    }
+
+    .nav-toggle{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-menu_visible{
+        left: 0;
+    }
+
+    /* ------- Solo dejar el outline cuando navegamos con Tab, (con el mouse no) ------- */
+
+    /* (No noto nada xd) */
+    .nav-toggle:focus:not(:focus-visible){
+        outline: none;
+    }
+}
